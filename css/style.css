@@ -1,0 +1,118 @@
+:root{
+    --main-padding:5px;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    display: grid;
+    height: 100vh;
+    grid-template-columns: 0.5fr 3.5fr;
+    grid-template-rows: 4fr;
+    grid-template-areas:
+        "nav main";
+    grid-gap: 0.2rem;
+    font-family: Inter, sans-serif;
+    font-weight: 800;
+    font-size: 12px;
+    text-align: center;
+}
+
+nav {
+    background: teal;
+    grid-area: nav;
+    border-radius: 0 0 5px 0;
+    
+}
+
+.nav-header {
+    font-size: 20px;
+    
+    padding: 25px;
+}
+
+.menu a {
+    background: teal;
+    font-size: 18px;
+    letter-spacing: 2px;
+    text-decoration: none;
+    color: white;
+    display: list-item;
+    padding: 20px;
+    transition-duration: 1000ms;
+    transition-timing-function: linear;
+}
+
+.menu a:hover {
+    border-radius: 30px;
+    border: none;
+    background: #176868;   
+}
+
+.container{
+    display: grid;
+}
+
+main {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    background: #468899;
+    grid-area: main;
+    border-radius: 0 0 0px 5px;
+    padding-top: 50px;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+table {
+    border-radius: 2px;
+    border-collapse: collapse;
+    box-shadow: 0 5px 10px black;
+    background-color: white;
+    text-align: left;
+    overflow: hidden;
+}
+
+thead {
+    box-shadow: 0 5px 10px teal;
+}
+
+th {
+    padding: 1rem 2rem;
+    letter-spacing: 0.1rem;
+    font-size: 0.7rem;
+    font-weight: 900;
+}
+
+td {
+    padding: 1rem 2rem;
+}
+
+a {
+    text-decoration: none;
+}
+/* color alternating rows on even numbers*/
+tr:nth-child(even) {
+    background-color: teal;
+}
+main img {
+    height: 300px;
+    width: 300px;
+    transition-duration: 5000ms;
+    transform: rotate(360deg);
+    transition-timing-function: ease-in-out;
+}
+
+main img:hover {
+    transform: rotate(720deg);
+}
+/* responsive layout for when width drops below 550px*/
+@media only screen and (max-width: 550px) {
+    body {
+        grid-template-columns: 1fr;
+        grid-template-rows: 0.2fr 3.8fr ;
+        grid-template-areas:
+            "nav"
+            "main";
+    }
+}
